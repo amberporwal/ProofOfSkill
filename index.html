@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProofOfSkill | Show Your Skills</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <nav class="navbar">
+    <a class="logo" href="#">Proof<span>OfSkill.</span></a>
+    <div class="nav-links">
+      <a href="#dashboard">Dashboard</a>
+      <a href="#proofs">My Proofs</a>
+      <a href="#challenges">Challenges</a>
+    </div>
+    <button class="btn btn-small" id="openForm">+ Add Proof</button>
+  </nav>
+
+  <main class="container">
+    <section class="hero">
+      <div class="eyebrow">YOUR SKILLS. YOUR PROOF.</div>
+      <h1>Don't just list your skills.<br>
+        <span>Show the proof.</span>
+      </h1>
+      <p>Build your skill portfolio, track practical work
+        and showcase what you can actually do.</p>
+      <button class="btn" id="heroButton">Build Your Portfolio →</button>
+    </section>
+
+    <section id="dashboard" class="stats">
+        
+<section class="progress-panel">
+  <div class="progress-info">
+    <div>
+      <div class="eyebrow">YOUR GROWTH</div>
+      <h2>Portfolio Progress</h2>
+      <p class="muted">
+        Build your proof collection one project at a time.
+      </p>
+    </div>
+    <div class="progress-number">
+      <strong id="progressPercent">0%</strong>
+      <span>Target: 5 proofs</span>
+    </div>
+  </div>
+
+  <div
+    class="progress-track"
+    role="progressbar"
+    aria-label="Portfolio progress"
+    aria-valuemin="0"
+    aria-valuemax="100"
+    aria-valuenow="0"
+    id="progressTrack"
+  >
+    <div id="progressFill" class="progress-fill"></div>
+  </div>
+
+  <p id="progressMessage" class="muted">
+    Add your first proof to start building your portfolio.
+  </p>
+</section>
+
+      <div class="stat-card">
+        <p>Total Skills</p>
+        <h2 id="skillCount">0</h2>
+        <span>Skills with evidence</span>
+      </div>
+      <div class="stat-card">
+        <p>Total Proofs</p>
+        <h2 id="proofCount">0</h2>
+        <span>Work samples added</span>
+      </div>
+      <div class="stat-card">
+        <p>Challenges Done</p>
+        <h2 id="challengeCount">0</h2>
+        <span>Practical tasks completed</span>
+      </div>
+    </section>
+
+    <section id="proofs" class="section">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">YOUR WORKSPACE</div>
+          <h2>Skill Proofs</h2>
+          <p class="muted">Every project tells a story.</p>
+        </div>
+        <button class="btn" id="sectionAdd">+ Add Proof</button>
+      </div>
+
+      <div class="toolbar">
+        <input id="searchInput" type="search"
+          placeholder="Search skills or projects...">
+        <select id="filterSelect">
+          <option value="All">All skills</option>
+          <option value="HTML">HTML</option>
+          <option value="CSS">CSS</option>
+          <option value="JavaScript">JavaScript</option>
+          <option value="Python">Python</option>
+          <option value="Excel">Excel</option>
+          <option value="Power BI">Power BI</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <div id="proofGrid" class="proof-grid"></div>
+    </section>
+
+    <section id="challenges" class="section challenge-section">
+      <div class="eyebrow">KEEP IMPROVING</div>
+      <h2>Mini Challenges</h2>
+      <p class="muted">Complete practical tasks to build your portfolio.</p>
+      <div id="challengeList" class="challenge-list"></div>
+    </section>
+
+    <section class="cta">
+      <h2>Your next opportunity starts with proof.</h2>
+      <p>Keep building. Keep documenting. Keep growing.</p>
+      <button class="btn" id="portfolioButton">View My Portfolio →</button>
+    </section>
+  </main>
+
+  <footer>© 2026 ProofOfSkill · Built to showcase real work.</footer>
+
+ 
+<div id="formModal" class="modal hidden">
+  <div class="modal-card">
+    <div class="modal-heading">
+      <div>
+        <div class="eyebrow">DOCUMENT YOUR WORK</div>
+        <h2 id="formHeading">Add Skill Proof</h2>
+        <p class="muted" id="formSubtitle">
+          Showcase what you have built.
+        </p>
+      </div>
+      <button type="button" id="closeForm" class="close-btn"
+        aria-label="Close form">×</button>
+    </div>
+
+    <form id="proofForm">
+      <label for="skill">Skill</label>
+      <select id="skill" required>
+        <option value="">Select a skill</option>
+        <option>HTML</option>
+        <option>CSS</option>
+        <option>JavaScript</option>
+        <option>Python</option>
+        <option>Excel</option>
+        <option>Power BI</option>
+        <option>Other</option>
+      </select>
+
+      <label for="title">Project title</label>
+      <input id="title" maxlength="80"
+        placeholder="e.g. Interactive Portfolio" required>
+
+      <label for="description">Project description</label>
+      <textarea id="description" maxlength="500"
+        placeholder="Describe your project..." required></textarea>
+
+      <label for="projectUrl">Project URL (optional)</label>
+      <input id="projectUrl" type="url"
+        placeholder="https://github.com/username/project">
+
+      <div class="form-actions">
+        <button type="button" id="cancelForm" class="cancel-btn">
+          Cancel
+        </button>
+        <button class="btn submit-btn" id="saveButton" type="submit">
+          Save Proof
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+  <div id="toast" class="toast" role="status"></div>
+</body>
+</html>
